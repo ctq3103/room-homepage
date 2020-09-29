@@ -1,0 +1,116 @@
+$dark-gray: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$very-dark-gray: hsl(0, 0%, 27%);
+
+html {
+	font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Spartan', sans-serif;
+	color: $dark-gray;
+	line-height: 1.2;
+	font-size: 1.2rem;
+	font-weight: 500;
+	width: 144rem;
+	max-width: 100%;
+	overflow-x: hidden;
+
+	&.noscroll {
+		overflow: hidden;
+	}
+}
+
+h1,
+h2,
+h3 {
+	color: $black;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 3.2rem;
+	font-weight: 700;
+	margin-bottom: 3rem;
+
+	@include breakpoint-up(xlarge) {
+		font-size: 3.5rem;
+	}
+}
+
+h2 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	letter-spacing: 0.4rem;
+}
+
+p {
+	line-height: 1.6;
+}
+
+a,
+a:visited,
+a:hover {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: $black;
+	font-weight: 600;
+	@include breakpoint-up(large) {
+		color: $white;
+	}
+}
+
+.container {
+	max-width: 80rem;
+	margin: 0 auto;
+
+	padding: 7rem 3.2rem;
+
+	@include breakpoint-up(large) {
+		padding: 9rem 8rem 0 8rem;
+	}
+	@include breakpoint-up(xlarge) {
+		padding: 12rem 10rem 0 10rem;
+	}
+}
+
+button,
+.button {
+	display: inline-block;
+	background-color: $white;
+	border: 0;
+	color: $black;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 1.4rem;
+	letter-spacing: 1.2rem;
+	text-transform: uppercase;
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.hide-for-mobile {
+	@include breakpoint-down(medium) {
+		display: none !important;
+	}
+}
+
+.hide-for-desktop {
+	@include breakpoint-up(large) {
+		display: none !important;
+	}
+}

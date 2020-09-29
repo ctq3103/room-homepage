@@ -1,0 +1,89 @@
+.header {
+	position: absolute;
+	z-index: 5;
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba($dark-gray, 0.5);
+	}
+
+	nav {
+		width: 100vw;
+		padding: 4.5rem 2rem 0 0;
+		display: grid;
+		align-items: center;
+		grid-template-columns: repeat(2, 1fr);
+
+		@include breakpoint-up(large) {
+			display: flex;
+			padding-top: 6rem;
+		}
+	}
+
+	#hamburger {
+		padding-left: 2rem;
+	}
+	&__logo {
+		img {
+			width: 6rem;
+			height: auto;
+		}
+
+		@include breakpoint-up(large) {
+			padding-left: 6rem;
+			padding-right: 1.5rem;
+		}
+	}
+
+	&__menu {
+		background: $white;
+		padding: 5.7rem 10rem 1.5rem 0rem;
+		z-index: 15;
+		transform: translate(0%, -75%);
+		overflow-x: hidden;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a {
+			display: block;
+			padding: 1.8rem;
+		}
+	}
+
+	&__links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			position: relative;
+			transition: color 0.2s ease-in-out;
+			margin-left: 3.2rem;
+
+			&::before {
+				content: '';
+				position: absolute;
+				height: 2px;
+				width: 60%;
+				left: 20%;
+				right: 0;
+				top: 2rem;
+				background: white;
+				opacity: 0;
+				-webkit-transition: opacity 0.2s ease-in-out;
+				transition: opacity 0.2s ease-in-out;
+			}
+
+			&:hover {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,70 @@
+.carousel {
+	&__track {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		transition: transform 0.2s ease-in-out;
+
+		display: flex;
+	}
+	&__slide {
+		//position: absolute;
+		flex: 0 0 100%;
+		background-color: $white;
+		width: 100%;
+		display: grid;
+
+		@include breakpoint-up(large) {
+			grid-template-columns: 3fr 2fr;
+		}
+
+		&-image {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+		&-content {
+			position: relative;
+			margin: 0;
+			padding: 0;
+		}
+
+		& .shop-now {
+			padding: 1.5rem 0;
+		}
+	}
+
+	&__button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translateY(-100%);
+
+		@include breakpoint-up(large) {
+			bottom: 0;
+			top: auto;
+			right: auto;
+			transform: translateY(0);
+		}
+
+		&-right,
+		&-left {
+			width: 5rem;
+			height: 5rem;
+			background-color: black;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			@include breakpoint-up(large) {
+				width: 7.2rem;
+				height: 7.2rem;
+			}
+
+			@include breakpoint-up(xlarge) {
+				width: 8.2rem;
+				height: 8.2rem;
+			}
+		}
+	}
+}
