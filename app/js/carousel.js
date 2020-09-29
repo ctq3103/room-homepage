@@ -15,6 +15,7 @@ slides.forEach(setSlidePosition);
 //Move slides
 const moveToSlide = (track, currentSlide, targetSlide) => {
 	track.style.transform = `translateX(-${targetSlide.style.left})`;
+	track.style['overflow-x'] = 'inherit';
 	currentSlide.classList.remove('current-slide');
 	targetSlide.classList.add('current-slide');
 };
